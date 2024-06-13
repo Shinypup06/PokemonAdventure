@@ -1,14 +1,15 @@
-# WELCOME TO POKEMON ADVENTURE!
+# WELCOME TO 2D POKEMON ADVENTURE!
+## By Shining
 ### v1.01
 
-Current Bugs:
+#### Current Bugs:
 - Randomly generated moves are duplicated sometimes
 - When your pokemon faints, you are not automatically taken to the switch screen
 - When all pokemon die, you are not forced to go back to the pokemon center
 - When you switch the opponent doesnt take a turn
 - There is no "press R to run"
 
-Future Updates Include:
+#### Future Updates Include:
 - Implement a "press any key to continue" for unclear screens
 - Add atk and def stats to make battling and leveling more efficient and impactful
 - use a CSV file to store pokemon and move information rather than a temporary list
@@ -20,7 +21,7 @@ Future Updates Include:
 - Collectibles?
 - Visible health bar
 
-Credits:
+#### Credits:
 - GamePanel tutorial by RyiSnow on youtube
 - Tile Drawing tutorial by RyiSnow on youtube
 - collisions tutorial by RyiSnow on youtube
