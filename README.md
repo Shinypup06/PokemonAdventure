@@ -1,5 +1,5 @@
-#WELCOME TO POKEMON ADVENTURE!
-###v1.01
+# WELCOME TO POKEMON ADVENTURE!
+### v1.01
 
 Current Bugs:
 - Randomly generated moves are duplicated sometimes
