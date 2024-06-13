@@ -1,4 +1,4 @@
-# WELCOME TO 2D POKEMON ADVENTURE!
+# WELCOME TO POKEMON ADVENTURE!
 ## By Shining
 ### v1.01
 
@@ -7,7 +7,7 @@
 - When your pokemon faints, you are not automatically taken to the switch screen
 - When all pokemon die, you are not forced to go back to the pokemon center
 - When you switch the opponent doesnt take a turn
-- There is no "press R to run"
+- There is no "press R to exit" once the battle sequence ends
 
 #### Future Updates Include:
 - Implement a "press any key to continue" for unclear screens
