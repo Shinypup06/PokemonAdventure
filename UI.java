@@ -226,9 +226,9 @@ public class UI{
         
         String text; 
         
-        //"Welcome to the pokemon center!"
+        //"Welcome to the Pokemon center!"
         g2.setFont(messageFont);
-        g2.drawString("Welcome to the pokemon center!", gp.tileSize * 3, gp.tileSize * 4);
+        g2.drawString("Welcome to the Pokemon Center!", gp.tileSize * 3, gp.tileSize * 4);
         
         g2.setFont(new Font("Courier New", Font.BOLD, 12));
         

@@ -11,6 +11,7 @@ Current Bugs:
 Future Updates Include:
 - Implement a "press any key to continue" for unclear screens
 - Add atk and def stats to make battling and leveling more efficient and impactful
+- use a CSV file to store pokemon and move information rather than a temporary list
 - Add npcs whom you can battle (for money?)
 - add money so you can buy pokeballs at the pokemon center
 - add transfers to the professor to free up space in your pokemon bag
@@ -24,3 +25,4 @@ Credits:
 - Tile Drawing tutorial by RyiSnow on youtube
 - collisions tutorial by RyiSnow on youtube
 - Pokemon sprites from the pokemon wiki
+
