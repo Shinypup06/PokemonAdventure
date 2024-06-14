@@ -167,6 +167,11 @@ public class KeyHandler implements KeyListener{
             leftPressed = false;
             upPressed = false;
             downPressed = false;
+
+            if(code == KeyEvent.VK_T){
+                gp.gameState = gp.transferState;
+            }
+
             if(code== KeyEvent.VK_ENTER){ //if enter key is pressed (pause)
                 gp.gameState = gp.playState;
             }
@@ -177,6 +182,8 @@ public class KeyHandler implements KeyListener{
                     Player.pokemonBag.get(i).heal(10000);
                 }
             }
+
+
         }
         
         //SWITCH STATE
@@ -288,6 +295,36 @@ public class KeyHandler implements KeyListener{
             }
         }
         
+        //TRANSFER STATE
+        if(gp.gameState == gp.transferState){
+            if(code == KeyEvent.VK_B){
+                gp.gameState = gp.pokemonCenterState;
+            }
+            if(Player.pokemonBag.size() > 1){
+                if(code == KeyEvent.VK_1){
+                    Player.pokemonBag.remove(0);
+                }
+                if(code == KeyEvent.VK_2){
+                    Player.pokemonBag.remove(1);
+                }
+                if(code == KeyEvent.VK_3 && Player.pokemonBag.size() > 2){
+                    Player.pokemonBag.remove(2);
+                }
+                if(code == KeyEvent.VK_4 && Player.pokemonBag.size() > 3){
+                    Player.pokemonBag.remove(3);
+                }
+                if(code == KeyEvent.VK_5 && Player.pokemonBag.size() > 4){
+                    Player.pokemonBag.remove(4);
+                }
+                if(code == KeyEvent.VK_6 && Player.pokemonBag.size() > 5){
+                    Player.pokemonBag.remove(5);
+                }
+            }
+            if(code == KeyEvent.VK_ENTER){
+                gp.gameState = gp.playState;
+            }
+        }
+
     }
     
     @Override

@@ -52,6 +52,9 @@ public class UI{
         if(gp.gameState == gp.starterState){
             drawStarterScreen();
         }
+        if(gp.gameState == gp.transferState){
+            drawTransferScreen();
+        }
 
     }
     
@@ -237,41 +240,41 @@ public class UI{
             if(Player.pokemonBag.size() < 6){
                 for(int i = 0; i < Player.pokemonBag.size(); i++){
                         g2.drawImage(ImageIO.read(getClass().getResourceAsStream("/images/" + Player.pokemonBag.get(i).getName() + ".png")),
-                        (int)(gp.tileSize * (2.4 + 2.1 * i)), gp.tileSize * 4, gp.tileSize * 3, gp.tileSize * 3, null);
+                        (int)(gp.tileSize * (2.4 + 2.1 * i)), (int)(gp.tileSize * 3.5), gp.tileSize * 3, gp.tileSize * 3, null);
                         
                         text = Player.pokemonBag.get(i).getName();
                         x = (int)(gp.tileSize * (3.2 + 2.2 * i));
-                        y = (int)(gp.tileSize * 7.3);
+                        y = (int)(gp.tileSize * 6.8);
                         g2.drawString(text, x, y);
                         
                         text = "" + Player.pokemonBag.get(i).getHP() + "/" + Player.pokemonBag.get(i).getMaxHP();
                         x = (int)(gp.tileSize * (3.2 + 2.2 * i));
-                        y = (int)(gp.tileSize * 7.8);
+                        y = (int)(gp.tileSize * 7.3);
                         g2.drawString(text, x, y);
                         
                         text = "lv. " + Player.pokemonBag.get(i).getLevel();
                         x = (int)(gp.tileSize * (3.2 + 2.2 * i));
-                        y = (int)(gp.tileSize * 8.3);
+                        y = (int)(gp.tileSize * 7.8);
                         g2.drawString(text, x, y);
                 }
             }else{
                     for(int i = 0; i < 6; i++){
                         g2.drawImage(ImageIO.read(getClass().getResourceAsStream("/images/" + Player.pokemonBag.get(i).getName() + ".png")),
-                        (int)(gp.tileSize * (2.4 + 2.1 * i)), gp.tileSize * 4, gp.tileSize * 3, gp.tileSize * 3, null);
+                        (int)(gp.tileSize * (2.4 + 2.1 * i)), (int)(gp.tileSize * 3.5), gp.tileSize * 3, gp.tileSize * 3, null);
                     
                         text = Player.pokemonBag.get(i).getName();
                         x = (int)(gp.tileSize * (3.2 + 2.2 * i));
-                        y = (int)(gp.tileSize * 7.3);
+                        y = (int)(gp.tileSize * 6.8);
                         g2.drawString(text, x, y);
                         
                         text = "" + Player.pokemonBag.get(i).getHP() + "/" + Player.pokemonBag.get(i).getMaxHP();
                         x = (int)(gp.tileSize * (3.2 + 2.2 * i));
-                        y = (int)(gp.tileSize * 7.8);
+                        y = (int)(gp.tileSize * 7.3);
                         g2.drawString(text, x, y);
                         
                         text = "lv. " + Player.pokemonBag.get(i).getLevel();
                         x = (int)(gp.tileSize * (3.2 + 2.2 * i));
-                        y = (int)(gp.tileSize * 8.3);
+                        y = (int)(gp.tileSize * 7.8);
                         g2.drawString(text, x, y);
                 }
             }
@@ -294,8 +297,92 @@ public class UI{
         text = "ENTER) exit";
         x = gp.tileSize * 11;
         g2.drawString(text, x, y);
+
+        text = "T) transfer pokemon";
+        x = gp.tileSize * 4;
+        y = (int)(gp.tileSize * 9.3);
+        g2.drawString(text, x, y);
     }
     
+    public void drawTransferScreen(){
+        //window
+        int x = gp.tileSize * 2;
+        int y = gp.tileSize * 3;
+        int width = gp.screenWidth - (gp.tileSize * 4);
+        int height = gp.tileSize * 8;
+        drawSubWindow(x, y, width, height);
+        
+        String text; 
+        
+        //"Which Pokemon would you like to transfer?"
+        g2.setFont(messageFont);
+        g2.drawString("Which pokemon would you like to transfer?", gp.tileSize * 3, gp.tileSize * 4);
+        
+        g2.setFont(new Font("Courier New", Font.BOLD, 12));
+        
+        //load the image of the first 6 pokemon in your box
+        try{
+            if(Player.pokemonBag.size() < 6){
+                for(int i = 0; i < Player.pokemonBag.size(); i++){
+                        g2.drawImage(ImageIO.read(getClass().getResourceAsStream("/images/" + Player.pokemonBag.get(i).getName() + ".png")),
+                        (int)(gp.tileSize * (2.4 + 2.1 * i)), (int)(gp.tileSize * 3.5), gp.tileSize * 3, gp.tileSize * 3, null);
+                        
+                        text = Player.pokemonBag.get(i).getName();
+                        x = (int)(gp.tileSize * (3.2 + 2.2 * i));
+                        y = (int)(gp.tileSize * 6.8);
+                        g2.drawString(text, x, y);
+                        
+                        text = "" + Player.pokemonBag.get(i).getHP() + "/" + Player.pokemonBag.get(i).getMaxHP();
+                        x = (int)(gp.tileSize * (3.2 + 2.2 * i));
+                        y = (int)(gp.tileSize * 7.3);
+                        g2.drawString(text, x, y);
+                        
+                        text = "lv. " + Player.pokemonBag.get(i).getLevel();
+                        x = (int)(gp.tileSize * (3.2 + 2.2 * i));
+                        y = (int)(gp.tileSize * 7.8);
+                        g2.drawString(text, x, y);
+                }
+            }else{
+                    for(int i = 0; i < 6; i++){
+                        g2.drawImage(ImageIO.read(getClass().getResourceAsStream("/images/" + Player.pokemonBag.get(i).getName() + ".png")),
+                        (int)(gp.tileSize * (2.4 + 2.1 * i)), (int)(gp.tileSize * 3.5), gp.tileSize * 3, gp.tileSize * 3, null);
+                    
+                        text = Player.pokemonBag.get(i).getName();
+                        x = (int)(gp.tileSize * (3.2 + 2.2 * i));
+                        y = (int)(gp.tileSize * 6.8);
+                        g2.drawString(text, x, y);
+                        
+                        text = "" + Player.pokemonBag.get(i).getHP() + "/" + Player.pokemonBag.get(i).getMaxHP();
+                        x = (int)(gp.tileSize * (3.2 + 2.2 * i));
+                        y = (int)(gp.tileSize * 7.3);
+                        g2.drawString(text, x, y);
+                        
+                        text = "lv. " + Player.pokemonBag.get(i).getLevel();
+                        x = (int)(gp.tileSize * (3.2 + 2.2 * i));
+                        y = (int)(gp.tileSize * 7.8);
+                        g2.drawString(text, x, y);
+                }
+            }
+        } catch(IOException e){
+            e.printStackTrace();
+        }
+        
+        g2.setFont(messageFont);
+        g2.setColor(Color.white);
+        
+        //ui
+        
+        text = "B) back to pokemon center";
+        x = gp.tileSize * 4;
+        y = gp.tileSize * 10;
+        g2.drawString(text, x, y);
+        
+        text = "ENTER) exit";
+        x = gp.tileSize * 11;
+        g2.drawString(text, x, y);
+
+    }
+
     public void drawSwitchScreen(){
         //window
         int x = gp.tileSize * 2;

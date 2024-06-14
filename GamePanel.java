@@ -56,6 +56,7 @@ public class GamePanel extends JPanel implements Runnable{
     public final int switchState = 5;
     public final int starterState = 6;
     public final int pokemonCenterState = 7;
+    public final int transferState = 8;
     
     //UI Draws all the windows and pop-ups, text and images
     public UI ui = new UI(this);
@@ -120,6 +121,7 @@ public class GamePanel extends JPanel implements Runnable{
     }
     
     public void update(){
+
         //only update player location if state is playstate
         if(gameState == playState){
             player.update();

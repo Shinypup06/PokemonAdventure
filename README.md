@@ -6,7 +6,7 @@
 - Randomly generated moves are duplicated sometimes
 - When your pokemon faints, you are not automatically taken to the switch screen
 - When all pokemon die, you are not forced to go back to the pokemon center
-- When you switch the opponent doesnt take a turn
+- When you start the battle sequence with a dead pokemon in slot 1, it doesn't automatically send out your second pokemon and you have to take a turn to switch them out
 - There is no "press R to exit" once the battle sequence ends
 
 #### Future Updates Include:

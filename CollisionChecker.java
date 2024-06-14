@@ -47,6 +47,7 @@ public class CollisionChecker{
             }
             //If player hits pokemon center, open the pokemon center window
             if(tileNum1 == 3 || tileNum2 == 3){
+                keyH.downPressed = false;
                 gp.gameState = gp.pokemonCenterState;
             }
         }
